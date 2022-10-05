@@ -142,6 +142,13 @@ class Script(scripts.Script):
                 if initial_info is None:
                     initial_info = proc.info
                 images += proc.images
+             
+            #Process Last Image
+            p.seed = p.subseed
+            proc = process_images(p)
+            #if initial_info is None:
+            initial_info = proc.info
+            images += proc.images
 
         if save_video:
             clip = ImageSequenceClip.ImageSequenceClip([np.asarray(i) for i in images], fps=video_fps)
