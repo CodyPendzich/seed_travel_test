@@ -84,7 +84,7 @@ class Script(scripts.Script):
                 return Processed(p, images, p.seed)
 
         # Custom seed travel saving
-        travel_path = os.path.join(p.outpath_samples, "travels")
+        travel_path = os.path.join(p.outpath_samples, "travel-tests")
         os.makedirs(travel_path, exist_ok=True)
         travel_number = Script.get_next_sequence_number(travel_path)
         travel_path = os.path.join(travel_path, f"{travel_number:05}")
